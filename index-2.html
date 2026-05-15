@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Felipe Ordonez, DDS | Wilton Cosmetic Dentistry</title>
+  <meta
+    name="description"
+    content="Friendly, modern cosmetic and restorative dentistry in Wilton, CT. Dr. Felipe Ordonez, DDS has helped patients smile with confidence for over 29 years."
+  >
+  <meta property="og:title" content="Dr. Felipe Ordonez, DDS | Wilton Cosmetic Dentistry">
+  <meta
+    property="og:description"
+    content="A fresh, welcoming dental website concept for Cosmetic Dentistry Wilton with a clear call-first patient experience and curated testimonials."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cosmeticdentistrywilton.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --teal-deep: #1f6b6b;
+      --teal-bright: #4aacac;
+      --teal-mist: #dff3f1;
+      --sage: #8cab8a;
+      --warm-white: #fbfaf6;
+      --sand: #f2eee6;
+      --ink: #213433;
+      --muted: #5f7271;
+      --line: rgba(31, 107, 107, 0.12);
+      --shadow: 0 22px 55px rgba(34, 77, 77, 0.12);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(74, 172, 172, 0.18), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(140, 171, 138, 0.14), transparent 20%),
+        linear-gradient(180deg, #ffffff 0%, var(--warm-white) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--container));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -3rem;
+      left: 1rem;
+      z-index: 20;
+      padding: 0.75rem 1rem;
+      border-radius: 0 0 12px 12px;
+      background: var(--teal-deep);
+      color: #fff;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(251, 250, 246, 0.86);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 84px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-mark {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--teal-deep);
+    }
+
+    .brand-subtitle {
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.3rem;
+      color: var(--teal-deep);
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      padding: 0.4rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 180ms ease, color 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: #164f4f;
+      border-color: var(--teal-bright);
+    }
+
+    .call-cta,
+    .hero-actions a,
+    .testimonial-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0.92rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+
+    .call-cta {
+      color: #fff;
+      background: linear-gradient(135deg, var(--teal-deep), #2b8787);
+      box-shadow: 0 14px 32px rgba(31, 107, 107, 0.22);
+    }
+
+    .call-cta:hover,
+    .hero-actions a:hover,
+    .testimonial-cta a:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 4rem 0 3rem;
+    }
+
+    .hero-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy,
+    .hero-visual,
+    .trust-card,
+    .testimonial-card,
+    .testimonial-cta {
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-copy {
+      padding: 0.5rem 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(74, 172, 172, 0.12);
+      color: var(--teal-deep);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      line-height: 1.08;
+      color: var(--ink);
+    }
+
+    h1 {
+      margin-top: 1.2rem;
+      font-size: clamp(2.7rem, 5.6vw, 4.6rem);
+      max-width: 11ch;
+      color: var(--teal-deep);
+    }
+
+    .hero-copy p {
+      margin: 1.15rem 0 0;
+      max-width: 58ch;
+      font-size: 1.07rem;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.9rem;
+    }
+
+    .hero-actions a:first-child {
+      color: #fff;
+      background: linear-gradient(135deg, var(--teal-deep), #2b8787);
+      box-shadow: 0 16px 34px rgba(31, 107, 107, 0.2);
+    }
+
+    .hero-actions a:last-child {
+      color: var(--teal-deep);
+      background: #fff;
+      border: 1px solid rgba(31, 107, 107, 0.14);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 510px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(74, 172, 172, 0.18), rgba(255, 255, 255, 0.14)),
+        linear-gradient(135deg, #f3fcfb, #eef8f7 60%, #f7f4ec 100%);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(74, 172, 172, 0.12);
+      padding: 1.4rem;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-visual::before {
+      width: 260px;
+      height: 260px;
+      top: -90px;
+      right: -60px;
+      background: rgba(74, 172, 172, 0.18);
+    }
+
+    .hero-visual::after {
+      width: 180px;
+      height: 180px;
+      bottom: -50px;
+      left: -50px;
+      background: rgba(140, 171, 138, 0.16);
+    }
+
+    .visual-panel {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 1.6rem;
+      border-radius: calc(var(--radius-lg) - 6px);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.92)),
+        #fff;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 1.2rem;
+    }
+
+    .photo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      padding: 0.55rem 0.85rem;
+      border-radius: 999px;
+      background: var(--teal-mist);
+      color: var(--teal-deep);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .portrait-placeholder {
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, rgba(74, 172, 172, 0.14), rgba(255, 255, 255, 0.5)),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(31, 107, 107, 0.06),
+          rgba(31, 107, 107, 0.06) 18px,
+          rgba(255, 255, 255, 0.32) 18px,
+          rgba(255, 255, 255, 0.32) 36px
+        );
+      min-height: 250px;
+      border: 1px dashed rgba(31, 107, 107, 0.18);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .visual-copy h2 {
+      font-size: clamp(1.65rem, 2.8vw, 2.35rem);
+      color: var(--teal-deep);
+    }
+
+    .visual-copy p {
+      margin: 0.7rem 0 0;
+      color: var(--muted);
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .hero-points li {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.7rem 0.85rem;
+      border-radius: 14px;
+      background: rgba(223, 243, 241, 0.72);
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-points li::before {
+      content: "";
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 50%;
+      background: var(--sage);
+      box-shadow: 0 0 0 6px rgba(140, 171, 138, 0.12);
+      flex: 0 0 auto;
+    }
+
+    .section {
+      padding: 1.5rem 0 5rem;
+    }
+
+    .section-label {
+      margin-bottom: 0.7rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--teal-bright);
+    }
+
+    .section-heading {
+      max-width: 11ch;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--teal-deep);
+    }
+
+    .section-intro {
+      max-width: 62ch;
+      margin-top: 0.95rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .trust-grid,
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.35rem;
+      margin-top: 2rem;
+    }
+
+    .trust-card {
+      padding: 1.7rem;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 34px rgba(31, 107, 107, 0.08);
+    }
+
+    .trust-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--teal-deep);
+    }
+
+    .trust-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .trust-icon {
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      border-radius: 14px;
+      background: var(--teal-mist);
+      color: var(--teal-deep);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .testimonials {
+      padding: 5rem 0;
+      background:
+        linear-gradient(180deg, #eff9f8 0%, #e7f4f2 100%);
+      border-top: 1px solid rgba(31, 107, 107, 0.08);
+      border-bottom: 1px solid rgba(31, 107, 107, 0.08);
+    }
+
+    .testimonial-card {
+      padding: 1.65rem;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(74, 172, 172, 0.14);
+      box-shadow: 0 16px 34px rgba(31, 107, 107, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.015);
+      box-shadow: 0 22px 40px rgba(31, 107, 107, 0.12);
+    }
+
+    .quote-mark {
+      display: inline-flex;
+      width: 2.8rem;
+      height: 2.8rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.9rem;
+      border-radius: 50%;
+      background: var(--teal-mist);
+      color: var(--teal-deep);
+      font-family: "Poppins", sans-serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+    }
+
+    .testimonial-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .testimonial-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.15rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(31, 107, 107, 0.08);
+    }
+
+    .testimonial-name {
+      font-weight: 700;
+      color: var(--teal-deep);
+    }
+
+    .stars {
+      color: var(--sage);
+      letter-spacing: 0.08em;
+      font-size: 0.94rem;
+    }
+
+    .testimonial-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding: 1.6rem;
+      background: linear-gradient(135deg, var(--teal-deep), #2d7f7f);
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(31, 107, 107, 0.16);
+    }
+
+    .testimonial-cta h3 {
+      color: #fff;
+      font-size: 1.55rem;
+    }
+
+    .testimonial-cta p {
+      margin: 0.4rem 0 0;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .testimonial-cta a {
+      background: #fff;
+      color: var(--teal-deep);
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      background: #f7f3eb;
+      color: var(--muted);
+      padding: 1.5rem 0 2.2rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-meta strong {
+      color: var(--teal-deep);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+      transition: opacity 560ms ease, transform 560ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(74, 172, 172, 0.7);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .header-inner,
+      .footer-inner {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.8rem;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+      }
+
+      .call-cta {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 2.2rem;
+      }
+
+      .hero-shell,
+      .trust-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Dr. Felipe Ordonez, DDS",
+      "url": "https://cosmeticdentistrywilton.com/",
+      "telephone": "+1-203-762-7300",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "142 Old Ridgefield Rd",
+        "addressLocality": "Wilton",
+        "addressRegion": "CT",
+        "postalCode": "06897",
+        "addressCountry": "US"
+      },
+      "areaServed": "Wilton, CT",
+      "medicalSpecialty": [
+        "Cosmetic Dentistry",
+        "Dental Implants",
+        "Prosthodontics",
+        "General Dentistry"
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Go to home section">
+        <span class="brand-mark">Dr. Ordonez DDS</span>
+        <span class="brand-subtitle">Cosmetic Dentistry Wilton</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#testimonials">Testimonials</a>
+      </nav>
+      <a class="call-cta" href="tel:+12037627300">Call (203) 762-7300</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-shell">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Modern, Welcoming Care</div>
+          <h1>Beautiful smiles with a calm, friendly first impression.</h1>
+          <p>
+            This Theme B concept keeps the same single-page MVP scope, but shifts the mood
+            toward approachable, health-forward, and contemporary. It feels lighter,
+            softer, and more inviting while still keeping the call-first conversion path.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+12037627300">Call to Schedule</a>
+            <a href="#testimonials">See Testimonials</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="Doctor or office photo concept">
+          <div class="visual-panel">
+            <span class="photo-badge">Photo Concept Placeholder</span>
+            <div class="portrait-placeholder">
+              FRIENDLY DOCTOR OR OFFICE PHOTO
+              <br>
+              Natural light, warm expression, fresh modern setting
+            </div>
+            <div class="visual-copy">
+              <h2>Dr. Felipe Ordonez, DDS</h2>
+              <p>
+                Cosmetic and restorative dentistry in Wilton, CT with an emphasis on trust,
+                clarity, and a more relaxed patient experience.
+              </p>
+              <ul class="hero-points">
+                <li>29+ years serving Wilton and nearby communities</li>
+                <li>Personalized guidance instead of a cluttered booking funnel</li>
+                <li>Focused on confident, natural-looking smile outcomes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Why This Direction Works</div>
+          <h2 class="section-heading">Fresh and clear without losing credibility.</h2>
+          <p class="section-intro">
+            The requirements call this Theme B “Fresh & Welcoming.” For this MVP, that means
+            softer surfaces, rounded cards, brighter spacing, and a friendlier tone that can
+            appeal to families, first-timers, and cosmetic patients alike.
+          </p>
+        </div>
+
+        <div class="trust-grid">
+          <article class="trust-card reveal">
+            <div class="trust-icon">29</div>
+            <h3>Established Experience</h3>
+            <p>
+              The practice history remains front and center, but presented in a more current,
+              less clinical visual language.
+            </p>
+          </article>
+
+          <article class="trust-card reveal">
+            <div class="trust-icon">C</div>
+            <h3>Clear Communication</h3>
+            <p>
+              The page stays simple and uncluttered, helping visitors understand the next
+              step immediately without old-site distractions.
+            </p>
+          </article>
+
+          <article class="trust-card reveal">
+            <div class="trust-icon">S</div>
+            <h3>Smile Confidence</h3>
+            <p>
+              Testimonial content becomes a warmer, more approachable proof point instead of
+              relying on a third-party review widget.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Testimonials</div>
+          <h2 class="section-heading" id="testimonials-heading">A friendlier take on social proof.</h2>
+          <p class="section-intro">
+            This version keeps the static review strategy from the requirements, but presents
+            it in brighter, rounded cards that feel more conversational and less formal.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              I really had an enjoyable experience at Dr. Ordonez's office. Everyone was so
+              positive and personable, and the whole visit felt smooth and easy.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Sean O.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              I got in quickly for a chipped tooth, and Dr. Ordonez was professional,
+              courteous, and easy to talk to. I felt listened to the entire time.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Nancy H.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              My treatment felt thoughtful from beginning to end. The result looks natural,
+              and I smile more easily now because everything feels so balanced.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Emily L.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              The office atmosphere is welcoming, and the staff made every step feel calm
+              and organized. It never felt rushed or overwhelming.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Daniel R.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              I appreciated how clearly my options were explained. The experience felt
+              personal, and the final result gave me a big confidence boost.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Patricia S.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <span class="quote-mark">“</span>
+            <p>
+              This felt like modern dental care without the stress. Everyone was kind,
+              practical, and focused on helping me feel comfortable with my smile again.
+            </p>
+            <div class="testimonial-footer">
+              <span class="testimonial-name">Michael T.</span>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonial-cta reveal">
+          <div>
+            <h3>Ready to talk through your options?</h3>
+            <p>Call the office for a direct, personal next step.</p>
+          </div>
+          <a href="tel:+12037627300">Call (203) 762-7300</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-meta">
+        <span><strong>Dr. Felipe Ordonez, DDS</strong></span>
+        <span>142 Old Ridgefield Rd, Wilton, CT 06897</span>
+        <span><a href="tel:+12037627300">(203) 762-7300</a></span>
+      </div>
+      <div>Copyright © 2026 Cosmetic Dentistry Wilton</div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      {
+        threshold: 0.18
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
